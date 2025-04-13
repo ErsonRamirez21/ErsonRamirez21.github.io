@@ -3,8 +3,8 @@ $primary-color: #ffd700;
 
 //Test
 @font-face {
-    font-family: 'Helvetica Neue'; 
-    src: url('./assets/fonts/helvetica-neu.ttf') format('truetype'); // Corrected extension and format
+    font-family: 'Leauge Spartan'; 
+    src: url('./assets/fonts/league-spartan.ttf') format('truetype'); // Corrected extension and format
 }
 
 @font-face {
@@ -19,5 +19,5 @@ $primary-color: #ffd700;
 
 input, 
 textarea {
-    font-family: 'Helvetica Neue';
+    font-family: 'Leauge Spartan';
 }
