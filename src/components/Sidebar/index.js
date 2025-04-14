@@ -13,10 +13,12 @@ import {
 
 const Sidebar = () => (
     <div className="nav-bar">
-        <Link className="logo" to="/">
+
+        {/*<Link className="logo" to="/">
             <img src={LogoER} alt="logo" />
             <img className="sub-logo" src={LogoSubtitleER} alt="ersonramirez" />
-        </Link>
+        </Link>*/}
+
         <nav>
             <NavLink exact="true" activeClassName="active" to="/">
                 <FontAwesomeIcon icon={faHome} color="#FFFFFF" />

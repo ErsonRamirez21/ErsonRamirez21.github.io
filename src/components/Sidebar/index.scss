@@ -10,17 +10,18 @@
     .logo {
         display: block;
         padding: 0px 0;
-        margin-left: 110px;
+        margin-left: 100px;
+        margin-top: 60px;
 
         img {
             display: block;
-            width: 400px;
+            width: 250px;
             height: auto;
 
             &.sub-logo {
-                width: 300px; // Adjust width if needed
-                margin-top: -120px; // Add spacing between the main logo and sub-logo
-                margin-left: 50px; // Add spacing between the main logo and sub-logo
+                width: 200px; // Adjust width if needed
+                margin-top: -70px; // Add spacing between the main logo and sub-logo
+                margin-left: 15px; // Add spacing between the main logo and sub-logo
                 padding-bottom: 0; // Remove unnecessary padding
             }
         }
@@ -94,7 +95,7 @@
 
             &.active {
                 svg {
-                    color: #FFd700
+                    color: #7a192b
                 }
             }
         }
