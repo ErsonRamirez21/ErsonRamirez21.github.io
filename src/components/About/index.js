@@ -20,7 +20,6 @@ const About = () => {
       setLetterClass('text-animate-hover');
     }, 3000);
 
-    // Cleanup function to clear the timeout
     return () => clearTimeout(timeout);
   }, []);
 
