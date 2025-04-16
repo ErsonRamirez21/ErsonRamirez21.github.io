@@ -35,9 +35,7 @@ const About = () => {
             />
           </h1>
           <p>
-            I'm a very ambitious front-end developer looking for a role in an
-            established company with the opportunity to work with the latest
-            technologies on challenging and diverse projects.
+            I graduated in 2024 with a Bachelor's degree in Computer Science. I have a strong foundation in software development, with hands-on experience in various programming languages like C, C++, XML, and JavaScript. I am particularly passionate about front-end design, crafting intuitive and engaging user interfaces that enhance the overall user experience!
           </p>
           <p align="LEFT">
             I'm quiet confident, naturally curious, and perpetually working on
