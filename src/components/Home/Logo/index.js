@@ -6,7 +6,7 @@ import './index.scss';
 
 const Logo = () => {
   const bgRef = useRef();
-  const outlineLogoRef = useRef(); // Ref for the SVG
+  const outlineLogoRef = useRef(); 
   const solidLogoRef = useRef();
 
   useEffect(() => {
@@ -20,12 +20,12 @@ const Logo = () => {
 
     // Ensure outlineLogoRef is defined before accessing it
     if (outlineLogoRef.current) {
-      // Animate all paths inside the SVG
+
       const paths = outlineLogoRef.current.querySelectorAll('path');
       gsap.fromTo(
         paths,
-        { drawSVG: "0%" }, // Start from 0%
-        { drawSVG: "100%", duration: 5, stagger: 0.2 } // Draw to 100% with a stagger
+        { drawSVG: "0%" }, 
+        { drawSVG: "100%", duration: 5, stagger: 0.2 } 
       );
     }
 
@@ -55,7 +55,7 @@ const Logo = () => {
 
       {/* Outline logo */}
       <svg
-        ref={outlineLogoRef} // Assign the ref to the SVG element
+        ref={outlineLogoRef} 
         xmlns="http://www.w3.org/2000/svg"
         width="200"
         viewBox="0 0 150 150"

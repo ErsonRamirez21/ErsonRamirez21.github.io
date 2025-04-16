@@ -36,3 +36,81 @@
     animation: fadeIN 1s forwards;
     animation-delay: 1s;
 }
+
+.about-page {
+    .text-zone {
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 45%;
+        vertical-align: middle;
+        display: table-cell;
+        max-height: 90%;
+
+        h1 {
+            font-size: 60px;
+            color: #E43D12;
+            font-weight: 400;
+            margin-top: 0;
+            position: relative;
+            margin-bottom: 40px;
+
+            &::before {
+                opacity: 0.6;
+                content: '<h1>';
+                font-family: 'La Belle Aurore';
+                font-size: 30px;
+                position: absolute;
+                margin-top: -40px;
+                left: 15px;
+                animation: fadeIN 1s 1.7s backwards;
+            }
+    
+            &::after {
+                opacity: 0.6;
+                content: '</h1>';
+                font-family: 'La Belle Aurore';
+                font-size: 30px;
+                position: absolute;
+                margin-top: 18px;
+                margin-left: 20px;
+                animation: fadeIN 1s 1.7s backwards;
+            }
+        }
+
+        p {
+            font-size: 15px;
+            color: #E43D12;
+            font-weight: 200;
+            min-width: fit-content;
+            opacity: 0;
+            animation: pulse 1s ease-in-out forwards; 
+            
+            &:nth-of-type(1) {
+                animation-delay: 0.1s;
+            }
+            &:nth-of-type(2) {
+                animation-delay: 0.2s;
+            }
+            &:nth-of-type(3) {
+                animation-delay: 0.3s;
+            }
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0; 
+        transform: scale(0.95); 
+    }
+    50% {
+        opacity: 0.5; 
+        transform: scale(1.05); 
+    }
+    100% {
+        opacity: 1; 
+        transform: scale(1); 
+    }
+}
