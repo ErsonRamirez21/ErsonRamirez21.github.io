@@ -38,12 +38,10 @@ const About = () => {
             I graduated in 2024 with a Bachelor's degree in Computer Science. I have a strong foundation in software development, with hands-on experience in various programming languages like C, C++, XML, and JavaScript. I am particularly passionate about front-end design, crafting intuitive and engaging user interfaces that enhance the overall user experience!
           </p>
           <p align="LEFT">
-            I'm quiet confident, naturally curious, and perpetually working on
-            improving my chops one design problem at a time.
+            I’m condifent in my ability to iterate on previous projects to elevate new ones to the next level. I have a keen eye for detail and a strong understanding of design principles, which allows me to create visually appealing and user-friendly applications.
           </p>
           <p>
-            If I need to define myself in one sentence that would be a family
-            person, a sports fanatic, and tech-obsessed!
+            As for hobbies, I make music in just about every style—Alternative, Rock, Indie Pop, to even video game soundtracks. As such, I also love to play a wide variety of games—Roguelikes, RPGs, Open World, Soulslikes, and everything in between!
           </p>
         </div>
 
