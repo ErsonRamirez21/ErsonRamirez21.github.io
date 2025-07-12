@@ -19,10 +19,10 @@
             height: auto;
 
             &.sub-logo {
-                width: 200px; // Adjust width if needed
-                margin-top: -70px; // Add spacing between the main logo and sub-logo
-                margin-left: 15px; // Add spacing between the main logo and sub-logo
-                padding-bottom: 0; // Remove unnecessary padding
+                width: 200px; 
+                margin-top: -70px; 
+                margin-left: 15px; 
+                padding-bottom: 0; 
             }
         }
     }
@@ -90,6 +90,12 @@
             &.contact-link {
                 &:after {
                     content: 'CONTACT';
+                }
+            }
+
+            &.projects-link {
+                &:after {
+                    content: 'PROJECTS';
                 }
             }
 

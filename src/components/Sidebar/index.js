@@ -3,7 +3,7 @@ import LogoER from '../../assets/images/logo-er.png';
 import LogoSubtitleER from '../../assets/images/logo_sub_er.png';
 import './index.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser, faEnvelope, faSuitcase } from '@fortawesome/free-solid-svg-icons';
 import {
     faLinkedin,
     faGithub,
@@ -28,6 +28,13 @@ const Sidebar = () => (
             </NavLink> 
             <NavLink exact="true" activeClassName="active" className="contact-link" to="/contact">
                 <FontAwesomeIcon icon={faEnvelope} color="#FFFFFF" />
+            </NavLink>
+            <NavLink
+                activeClassName="active"
+                className="projects-link"
+                to="/projects"
+                >
+                <FontAwesomeIcon icon={faSuitcase} color="#FFFFFF" />
             </NavLink>
         </nav>
         <ul>
