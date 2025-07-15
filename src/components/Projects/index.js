@@ -65,7 +65,7 @@ const Projects = () => {
     {
       name: 'Seed Planter Mobile',
       description:
-        'Cross-platform gardening app built with React Native. Track plants, journal progress, and maintain a virtual garden.',
+        'Cross-platform gardening app built with React Native. Track plants, journal progress, and maintain your garden.',
       images: seedPlanterImages,
     },
     {
@@ -76,17 +76,17 @@ const Projects = () => {
     },
   ];
 
-  return (
+    return (
     <div className="container projects-page">
-      <div className="text-zone">
-        <h1>
-          <AnimatedLetters
-            letterClass={letterClass}
-            strArray={['P', 'r', 'o', 'j', 'e', 'c', 't', 's']}
-            idx={15}
-          />
-        </h1>
+      <h1 className="fixed-title">
+        <AnimatedLetters
+          letterClass={letterClass}
+          strArray={['P', 'r', 'o', 'j', 'e', 'c', 't', 's']}
+          idx={15}
+        />
+      </h1>
 
+      <div className="text-zone">
         <div className="projects-container">
           {projects.map((project, index) => (
             <div className="project" key={index}>
