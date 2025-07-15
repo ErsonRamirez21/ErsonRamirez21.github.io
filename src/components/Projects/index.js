@@ -73,6 +73,7 @@ const Projects = () => {
       description:
         'Unity-based educational game teaching linear equations through arcade-style cannon mechanics.',
       gameEmbedUrl: 'https://jojojo8359.github.io/SWE-Project/assets/game_webgl/index.html',
+      projectUrl: 'https://jojojo8359.github.io/SWE-Project/',
     },
   ];
 
@@ -92,6 +93,18 @@ const Projects = () => {
             <div className="project" key={index}>
               <h2>{project.name}</h2>
               <p>{project.description}</p>
+
+              
+              {project.projectUrl && (
+                <a
+                  className="external-link"
+                  href={project.projectUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  🔗 Visit Project Site
+                </a>
+              )}
 
               {project.gameEmbedUrl && (
                 <div className="game-embed">
@@ -127,6 +140,9 @@ const Projects = () => {
                   </div>
                 </div>
               )}
+
+
+
             </div>
           ))}
         </div>

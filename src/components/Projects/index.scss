@@ -170,6 +170,23 @@
     }
   }
 
+  .external-link {
+    display: inline-block;
+    color: #e43d12;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid #e43d12;
+    padding: 20px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: #e43d12;
+      color: #fff;
+    }
+  }
+
+
 
 .image-modal {
   position: fixed;
@@ -184,6 +201,7 @@
   animation: fadeInModal 0.3s ease forwards;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  padding-left: 225px;
 
   &.closing {
     opacity: 0;
