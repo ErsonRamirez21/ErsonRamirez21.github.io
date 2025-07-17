@@ -14,6 +14,14 @@ const mathmunitionImages = importAll(
   require.context('../../assets/images/mathmunition', false, /\.(png|jpe?g|svg)$/)
 );
 
+const nexusImages = importAll(
+  require.context('../../assets/images/nexusgpa', false, /\.(png|jpe?g|svg)$/)
+);
+
+const nbodyImages = importAll(
+  require.context('../../assets/images/nbodysim', false, /\.(png|jpe?g|svg)$/)
+);
+
 const Projects = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
   const [selectedImage, setSelectedImage] = useState(null);
@@ -75,6 +83,20 @@ const Projects = () => {
       gameEmbedUrl: 'https://jojojo8359.github.io/SWE-Project/assets/game_webgl/index.html',
       projectUrl: 'https://jojojo8359.github.io/SWE-Project/',
     },
+    {
+      name: 'Nexus GPA',
+      description:
+        'Android Studio app for calculating GPA using MVVM architecture, ViewModel, and LiveData.',
+      technologies: ['Android Studio', 'Java', 'XML', 'RoomDatabase', 'RecyclerView'],
+      images: nexusImages,
+    },
+    {
+      name: 'C++ N-Body Simulation',
+      description:
+        'Physics-based simulation modeling gravitational interactions between celestial bodies.',
+      technologies: ['C++', 'SFML'],
+      images: nbodyImages,
+    },
   ];
 
     return (
@@ -119,7 +141,14 @@ const Projects = () => {
                 </div>
               )}
 
-              {project.images?.length > 0 && (
+              {project.images?.length === 1 ? (
+                <div className="static-image" onClick={() => handleImageClick(project.images[0].default || project.images[0])}>
+                  <img
+                    src={project.images[0].default || project.images[0]}
+                    alt={`${project.name} screenshot`}
+                  />
+                </div>
+              ) : project.images?.length > 1 ? (
                 <div className="carousel-wrapper">
                   <div
                     className="scrolling-carousel"
@@ -139,7 +168,8 @@ const Projects = () => {
                     ))}
                   </div>
                 </div>
-              )}
+              ) : null}
+
 
 
 

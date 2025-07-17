@@ -147,6 +147,25 @@
     }
   }
 
+  .static-image {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+  }
+
+
 }
 
   .game-embed {
