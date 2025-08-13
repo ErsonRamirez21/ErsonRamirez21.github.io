@@ -14,10 +14,6 @@ const seedPlanterImages = importAll(
   require.context('../../assets/images/seedplantermobile', false, /\.(png|jpe?g|svg)$/)
 );
 
-const mathmunitionImages = importAll(
-  require.context('../../assets/images/mathmunition', false, /\.(png|jpe?g|svg)$/)
-);
-
 const nexusImages = importAll(
   require.context('../../assets/images/nexusgpa', false, /\.(png|jpe?g|svg)$/)
 );
