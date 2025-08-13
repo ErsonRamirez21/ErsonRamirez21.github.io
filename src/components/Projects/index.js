@@ -65,7 +65,7 @@ const Projects = () => {
     {
       name: 'Deepwater Bravo',
       description:
-        '2D hack and slash game made with GML. Inspired by classic titles like Hades and Enter the Gungeon!',
+        '2D action adventure rougelike created with GML. Inspired by classic titles like Hyperlight Drifter, Hades, and Enter the Gungeon! Still a work in progress.',
       images: indieGameImages,
     },
     {
@@ -85,14 +85,12 @@ const Projects = () => {
       name: 'Nexus GPA',
       description:
         'Android Studio app for calculating GPA using MVVM architecture, ViewModel, and LiveData.',
-      technologies: ['Android Studio', 'Java', 'XML', 'RoomDatabase', 'RecyclerView'],
       images: nexusImages,
     },
     {
       name: 'C++ N-Body Simulation',
       description:
         'Physics-based simulation modeling gravitational interactions between celestial bodies.',
-      technologies: ['C++', 'SFML'],
       images: nbodyImages,
     },
   ];

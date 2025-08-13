@@ -1,15 +1,14 @@
 // Variables
 $color-primary: #f6eddb;
-$color-accent: #bd4b64;
+$color-accent: #1b1e23;
 $shadow-default: 0 8px 20px rgba(0, 0, 0, 0.2);
 $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
 
 .projects-page {
-  padding: 80px 10% 40px 10%;
+  padding: 200px 10% 40px 10%; 
   position: relative;
 
   .fixed-title {
-
     top: 40px;
     font-size: 60px;
     font-weight: 400;
@@ -21,24 +20,25 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
   .text-zone {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
-
-
+    gap: 5rem;
     height: calc(100vh - 100px);
     overflow-y: auto;
-
-    scrollbar-color: #f6eddb transparent;  
+    padding: 5rem;
+    padding-bottom: 6rem;
+    scrollbar-color: #f6eddb transparent;
   }
 
-
+  .text-zone > :last-child {
+    margin-bottom: 55rem;
+  }
 
   .project {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 20rem;
     background-color: rgba(255, 255, 255, 0.08);
-    padding: 2rem 3rem;
-    border-radius: 15px;
+    padding: 10rem 10rem;
+    border-radius: 50px;
     box-shadow: $shadow-default;
     align-items: center;
     justify-content: space-between;
@@ -47,29 +47,29 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
     &:hover {
       background-color: rgba(255, 255, 255, 0.15);
     }
-    
+
     .project-description {
       flex: 1 1 20%;
       min-width: 280px;
       color: $color-primary;
-      text-align: left;      
-      align-self: flex-start; 
+      text-align: center;
+      align-self: flex-start;
 
       h2 {
-        font-size: 4rem;   
+        font-size: 4rem;
         margin-bottom: 1rem;
         font-weight: 600;
       }
 
       p {
-        font-size: 2rem;  
+        font-size: 2rem;
         line-height: 1.6;
         margin-bottom: 1rem;
       }
 
       .technologies {
         font-style: italic;
-        font-size: 2rem;  
+        font-size: 2rem;
         margin-bottom: 1rem;
         color: $color-primary;
       }
@@ -78,23 +78,20 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
         display: inline-block;
         color: $color-primary;
         font-weight: 600;
-        font-size: 3rem;     
+        font-size: 3rem;
         text-decoration: none;
         border: 4px solid $color-primary;
-        padding: 18px 35px;      
+        padding: 18px 35px;
         border-radius: 10px;
         transition: background-color 0.3s ease, color 0.3s ease;
         cursor: pointer;
 
         &:hover {
-          background-color: $color-accent;
+          background-color: rgba(255, 255, 255, 0.08);
           color: #fff;
         }
       }
-
     }
-
-
 
     .project-media {
       flex: 1 1 55%;
@@ -103,13 +100,14 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 2rem;
     }
   }
 
   .game-embed {
     width: 100%;
-    aspect-ratio: 16 / 9;  
-    border-radius: 15px;
+    aspect-ratio: 16 / 9;
+    border-radius: 30px;
     overflow: hidden;
     box-shadow: $shadow-default;
 
@@ -120,7 +118,6 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
       display: block;
     }
   }
-
 
   .static-image {
     width: 100%;
@@ -148,24 +145,26 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
     position: relative;
     display: flex;
     align-items: center;
+    padding: 2rem 1rem;
+    gap: 1rem;
   }
 
   .scrolling-carousel {
     display: flex;
-    overflow-x: hidden;  
-    overflow-y: hidden; 
-    gap: 1rem;
-    padding: 1rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 5rem;
+    padding: 5rem 5rem;
     width: 100%;
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .carousel-image {
     flex: 0 0 auto;
     max-width: 400px;
-    max-height: 1000px;  
-    border-radius: 15px;
+    max-height: 1000px;
+    border-radius: 30px;
     overflow: hidden;
     cursor: pointer;
     box-shadow: $shadow-default;
@@ -175,9 +174,9 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
     img,
     video {
       width: 100%;
-      height: 100%;     
+      height: 100%;
       display: block;
-      object-fit: contain;  
+      object-fit: contain;
       border-radius: 15px;
     }
 
@@ -189,24 +188,16 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
 
   .carousel-arrow {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
     border: none;
     color: $color-primary;
-    font-size: 4rem;
+    font-size: 10rem;
     cursor: pointer;
-    border-radius: 50%;
-    width: 50px;            
-    height: 50px;
-    display: flex;         
-    align-items: center;    
-    justify-content: center;
     user-select: none;
-    transition: background-color 0.3s ease;
-    z-index: 10;
+    transition: color 0.3s ease;
 
     &:hover {
-      background-color: $color-accent;
-      color: #fff;
+      color: $color-accent;
     }
 
     &.left-arrow {
@@ -222,20 +213,20 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
 // Modal styles for enlarged media
 .image-modal {
   position: fixed;
+  margin-top: 85px;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 1000;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(5px);
   animation: fadeInModal 0.3s ease forwards;
-  cursor: pointer;
+  cursor: default;
   transition: opacity 0.3s ease;
   padding: 20px;
+  justify-content: center;
 
   &.closing {
     opacity: 0;
@@ -244,8 +235,8 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
   .image-modal-content {
     max-width: 90vw;
     max-height: 90vh;
-    padding: 10px;          
-    box-sizing: border-box;  
+    padding: 10px;
+    box-sizing: border-box;
     animation: zoomIn 0.3s ease forwards;
     pointer-events: none;
     display: flex;
@@ -262,12 +253,11 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease;
 
       &:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
       }
     }
   }
 }
-
 
 // Animations
 @keyframes fadeIN {

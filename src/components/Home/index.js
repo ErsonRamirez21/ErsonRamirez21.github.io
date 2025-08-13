@@ -8,7 +8,7 @@ import './index.scss'
 const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
     const nameArray = [' ', 'E', 'r', 's', 'o', 'n'];
-    const jobArray = ['F', 'r', 'o', 'n', 't', 'e', 'n', 'd', ' ', 'D', 'e', 'v', '.'];
+    const jobArray = ['S', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'D', 'e', 'v', '.'];
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -40,7 +40,7 @@ const Home = () => {
                         idx={nameArray.length + 15} 
                     />
                 </h1>
-                <h2>Frontend Developer</h2>
+                <h2>Software & Frontend Development</h2>
                 <Link to="/contact" className="flat-button">CONTACT ME</Link>
             </div>
             <Logo />

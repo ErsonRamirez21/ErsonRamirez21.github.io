@@ -36,16 +36,15 @@ const About = () => {
           </h1>
 
           <p>
-            I graduated in 2024 with a Bachelor's degree in Computer Science.
-            I have a strong foundation in software development, with hands-on
-            experience in various programming languages like C, C++, XML, and
-            JavaScript. I am particularly passionate about front-end design,
-            crafting intuitive and engaging user interfaces that enhance the
-            overall user experience.
+            Graduated from the University of Massachusetts with a Bachelor's of Science in Computer Science with a mathematics minor.
+            Strong foundation in software development, with hands-on
+            experience in various programming languages like C, C++, XML, JavaScript, and at the moment GML. 
+            I am particularly passionate about front-end design,
+            crafting intuitive and engaging user interfaces that enhance user experience.
           </p>
 
           <p style={{ textAlign: 'left' }}>
-            I’m confident in my ability to iterate on previous projects to
+            I am confident in my ability to iterate on previous projects to
             elevate new ones to the next level. I have a keen eye for detail
             and a strong understanding of design principles, which allows me
             to create visually appealing and user-friendly applications.
