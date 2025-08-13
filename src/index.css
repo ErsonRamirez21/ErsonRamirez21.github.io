@@ -13,6 +13,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden; 
+    overflow-y: auto;  
+  }
+}
+
+
 body::before {
   content: "";
   position: fixed;   

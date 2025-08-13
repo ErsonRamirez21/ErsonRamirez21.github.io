@@ -1,3 +1,4 @@
+// Existing animations
 @keyframes fadeIN {
   from {
     opacity: 0;
@@ -17,6 +18,19 @@
     transform: translateY(-50%);
     width: 40%;
     max-height: 90%;
+  }
+
+  .logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    animation: fadeIN 1s 1s backwards;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   }
 
   h1 {
@@ -53,6 +67,62 @@
     &:hover {
       background-color: rgba(255, 255, 255, 0.08);
       color: #fff;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .text-zone {
+      position: relative;
+      left: auto;
+      top: 30px;
+      transform: none;
+      width: 90%;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    .logo {
+      width: 120px;
+      margin: 0 auto 15px;
+    }
+
+    h1 {
+      font-size: 36px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-top: 15px;
+    }
+
+    .flat-button {
+      font-size: 12px;
+      padding: 8px 16px;
+      letter-spacing: 2px;
+      margin-top: 15px;
+    }
+  }
+
+  // Small mobile
+  @media screen and (max-width: 480px) {
+    .logo {
+      width: 100px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    h2 {
+      font-size: 16px;
+      letter-spacing: 1.5px;
+    }
+
+    .flat-button {
+      font-size: 11px;
+      padding: 6px 12px;
     }
   }
 }

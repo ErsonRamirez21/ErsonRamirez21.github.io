@@ -1,7 +1,7 @@
-// This .container controls my other pages for some reason lol
 .container {
-  width: 80%;
-  height: 90%;
+  width: 100%;
+  height: auto;
+  min-height: 90%;
   position: absolute;
   opacity: 0;
   top: 5%;
@@ -9,6 +9,39 @@
   z-index: 1;
   transform-style: preserve-3d;
   animation: fadeIN 1s forwards;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+    top: 3%;
+    padding: 0.8rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    position: relative;  
+    top: auto;            
+    margin: 40px auto;   
+    padding: 0.5rem;
+    transform: none;     
+  }
+}
+
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    position: relative;
+    top: auto;
+    margin: 30px auto;
+    padding: 0.5rem;
+    transform: none;
+  }
+}

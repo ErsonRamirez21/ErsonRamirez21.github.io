@@ -6,20 +6,46 @@
     transform: translateY(-50%);
     width: 40%;
     max-height: 90%;
-  }
 
-  h1 {
-    color: #f6eddb;
-    font-size: 60px;
-    margin: 0;
-    font-weight: 400;
-  }
+    @media screen and (max-width: 1200px) {
+      position: static;
+      transform: none;
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px; 
+    }
 
-  p {
-    color: #f6eddb;
-    font-size: 22px;
-    line-height: 1.5;
-    animation: fadeIN 0.6s 0.2s backwards;
+    h1 {
+      color: #f6eddb;
+      font-size: 60px;
+      margin: 0;
+      font-weight: 400;
+
+      @media screen and (max-width: 768px) {
+        font-size: 36px;
+      }
+
+      @media screen and (max-width: 480px) {
+        font-size: 28px;
+      }
+    }
+
+    p {
+      color: #f6eddb;
+      font-size: 22px;
+      line-height: 1.5;
+      animation: fadeIN 0.6s 0.2s backwards;
+
+      @media screen and (max-width: 768px) {
+        font-size: 28px;
+      }
+
+      @media screen and (max-width: 480px) {
+        font-size: 14px;
+      }
+    }
   }
 
   .contact-form {
@@ -50,6 +76,12 @@
           &:first-child {
             margin-left: 0;
           }
+
+          @media screen and (max-width: 768px) {
+            width: 100%;
+            margin-left: 0;
+            float: none;
+          }
         }
       }
     }
@@ -73,25 +105,23 @@
         color: #f6eddb;
         opacity: 0.7;
       }
+
+      @media screen and (max-width: 480px) {
+        height: 60px;
+        font-size: 14px;
+        padding: 0 15px;
+      }
     }
 
     textarea {
       padding: 20px;
       min-height: 300px;
       resize: none;
-    }
 
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    input:-webkit-autofill:focus,
-    textarea:-webkit-autofill,
-    textarea:-webkit-autofill:hover,
-    textarea:-webkit-autofill:focus {
-      -webkit-text-fill-color: #f6eddb !important;
-      -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.08) inset !important;
-      box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.08) inset !important;
-      font-family: inherit !important;
-      transition: background-color 5000s ease-in-out 0s;
+      @media screen and (max-width: 480px) {
+        min-height: 200px;
+        padding: 15px;
+      }
     }
 
     .flat-button {
@@ -116,6 +146,17 @@
         color: #fff;
         transition: all 0.3s ease;
       }
+
+      @media screen and (max-width: 768px) {
+        float: none;
+        margin: 60px auto 0;
+        display: block;
+      }
+
+      @media screen and (max-width: 480px) {
+        font-size: 12px;
+        padding: 8px 16px;
+      }
     }
   }
 
@@ -128,58 +169,56 @@
         color: #f6eddb;
         font-size: 18px;
         margin-bottom: 5px;
+
+        @media screen and (max-width: 480px) {
+          font-size: 16px;
+        }
       }
 
       p {
         font-size: 16px;
         color: #f6eddb;
+
+        @media screen and (max-width: 480px) {
+          font-size: 14px;
+        }
       }
     }
   }
-}
 
-/* Animations */
-@keyframes fadeIN {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+  .map-wrap {
+    float: right;
+    width: 50%;
+    height: 400px;
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .contact-page {
-    .text-zone {
-      position: static;
-      transform: none;
-      width: 90%;
-      margin: 0 auto;
-      padding: 20px 0;
-    }
-
-    .map-wrap {
+    @media screen and (max-width: 1200px) {
       float: none;
-      margin: 0;
       width: 100%;
-      height: 400px;
+      margin: 20px auto;
+      height: 300px;
     }
 
-    .info-map {
+    @media screen and (max-width: 480px) {
+      height: 200px;
+    }
+  }
+
+  .info-map {
+    display: block;
+
+    @media screen and (max-width: 1200px) {
       display: none;
     }
   }
+}
+
+/* Animations remain unchanged */
+@keyframes fadeIN {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

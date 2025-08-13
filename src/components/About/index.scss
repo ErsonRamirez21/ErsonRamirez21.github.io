@@ -8,10 +8,24 @@
   overflow: visible;
   z-index: 100;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1024px) {
+    width: 250px;
+    height: 250px;
+    right: 100px;
+  }
+
+  @media screen and (max-width: 768px) {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 40px auto 20px auto;
     width: 200px;
     height: 200px;
-    right: 20px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -38,6 +52,44 @@
   .face4 { transform: rotateY(180deg) rotateZ(90deg) translateZ(100px); color: #40265c; }
   .face5 { transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px); color: #244584; }
   .face6 { transform: rotateX(-90deg) translateZ(100px); color: #96e6c2; }
+
+  // Mobile adjustments
+  @media screen and (max-width: 768px) {
+    transform-origin: 75px 75px 0;
+    margin-left: calc(50% - 75px);
+    margin: 150px auto 20px auto; 
+
+    div {
+      width: 150px;
+      height: 150px;
+      font-size: 100px;
+    }
+
+    .face1 { transform: translateZ(75px); }
+    .face2 { transform: rotateY(90deg) translateZ(75px); }
+    .face3 { transform: rotateY(90deg) rotateX(90deg) translateZ(75px); }
+    .face4 { transform: rotateY(180deg) rotateZ(90deg) translateZ(75px); }
+    .face5 { transform: rotateY(-90deg) rotateZ(90deg) translateZ(75px); }
+    .face6 { transform: rotateX(-90deg) translateZ(75px); }
+  }
+
+  @media screen and (max-width: 480px) {
+    transform-origin: 60px 60px 0;
+    margin-left: calc(50% - 60px);
+
+    div {
+      width: 120px;
+      height: 120px;
+      font-size: 80px;
+    }
+
+    .face1 { transform: translateZ(60px); }
+    .face2 { transform: rotateY(90deg) translateZ(60px); }
+    .face3 { transform: rotateY(90deg) rotateX(90deg) translateZ(60px); }
+    .face4 { transform: rotateY(180deg) rotateZ(90deg) translateZ(60px); }
+    .face5 { transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px); }
+    .face6 { transform: rotateX(-90deg) translateZ(60px); }
+  }
 }
 
 @keyframes spincube {
@@ -49,11 +101,13 @@
   83% { transform: rotateX(90deg); }
 }
 
+
+// About Page Text
 .about-page {
   .text-zone {
     position: absolute;
     left: 10%;
-    top: 50%;
+    top: 55%; // move down a bit
     transform: translateY(-50%);
     width: 45%;
     max-height: 90%;
@@ -78,6 +132,29 @@
       &:nth-of-type(2) { animation-delay: 0.2s; }
       &:nth-of-type(3) { animation-delay: 0.3s; }
     }
+
+    @media screen and (max-width: 1024px) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: 768px) {
+      position: relative;
+      left: auto;
+      top: auto;
+      transform: none;
+      width: 90%;
+      margin: 60px auto 20px;
+      text-align: center;
+
+      h1 { font-size: 36px; }
+      p { font-size: 16px; }
+    }
+
+    @media screen and (max-width: 480px) {
+      margin: 70px auto 20px; 
+      h1 { font-size: 28px; }
+      p { font-size: 14px; }
+    }
   }
 }
 
@@ -86,4 +163,3 @@
   50% { opacity: 0.5; transform: scale(1.05); }
   100% { opacity: 1; transform: scale(1); }
 }
-

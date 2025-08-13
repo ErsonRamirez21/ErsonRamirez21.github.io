@@ -4,8 +4,9 @@ $color-accent: #1b1e23;
 $shadow-default: 0 8px 20px rgba(0, 0, 0, 0.2);
 $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
 
+// Projects Page
 .projects-page {
-  padding: 200px 10% 40px 10%; 
+  padding: 200px 10% 40px 10%;
   position: relative;
 
   .fixed-title {
@@ -23,13 +24,8 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
     gap: 5rem;
     height: calc(100vh - 100px);
     overflow-y: auto;
-    padding: 5rem;
-    padding-bottom: 6rem;
+    padding: 5rem 5rem 6rem 5rem;
     scrollbar-color: #f6eddb transparent;
-  }
-
-  .text-zone > :last-child {
-    margin-bottom: 55rem;
   }
 
   .project {
@@ -37,16 +33,14 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
     flex-wrap: wrap;
     gap: 20rem;
     background-color: rgba(255, 255, 255, 0.08);
-    padding: 10rem 10rem;
+    padding: 10rem;
     border-radius: 50px;
     box-shadow: $shadow-default;
     align-items: center;
     justify-content: space-between;
     transition: background-color 0.3s ease;
 
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.15);
-    }
+    &:hover { background-color: rgba(255, 255, 255, 0.15); }
 
     .project-description {
       flex: 1 1 20%;
@@ -55,25 +49,9 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
       text-align: center;
       align-self: flex-start;
 
-      h2 {
-        font-size: 4rem;
-        margin-bottom: 1rem;
-        font-weight: 600;
-      }
-
-      p {
-        font-size: 2rem;
-        line-height: 1.6;
-        margin-bottom: 1rem;
-      }
-
-      .technologies {
-        font-style: italic;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        color: $color-primary;
-      }
-
+      h2 { font-size: 4rem; margin-bottom: 1rem; font-weight: 600; }
+      p { font-size: 2rem; line-height: 1.6; margin-bottom: 1rem; }
+      .technologies { font-style: italic; font-size: 2rem; margin-bottom: 1rem; }
       .external-link {
         display: inline-block;
         color: $color-primary;
@@ -86,10 +64,7 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
         transition: background-color 0.3s ease, color 0.3s ease;
         cursor: pointer;
 
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.08);
-          color: #fff;
-        }
+        &:hover { background-color: rgba(255, 255, 255, 0.08); color: #fff; }
       }
     }
 
@@ -104,6 +79,7 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
   }
 
+  // Game embed and static images
   .game-embed {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -111,12 +87,7 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     box-shadow: $shadow-default;
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
+    iframe { width: 100%; height: 100%; border: none; display: block; }
   }
 
   .static-image {
@@ -134,12 +105,11 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
       border-radius: 15px;
       transition: transform 0.3s ease;
 
-      &:hover {
-        transform: scale(1.05);
-      }
+      &:hover { transform: scale(1.05); }
     }
   }
 
+  // Carousel
   .carousel-wrapper {
     width: 100%;
     position: relative;
@@ -153,17 +123,19 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
-    gap: 5rem;
-    padding: 5rem 5rem;
+    gap: 2rem;
+    padding: 2rem;
     width: 100%;
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+
+    &::-webkit-scrollbar { display: none; }
   }
 
   .carousel-image {
     flex: 0 0 auto;
     max-width: 400px;
-    max-height: 1000px;
     border-radius: 30px;
     overflow: hidden;
     cursor: pointer;
@@ -171,8 +143,7 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
 
-    img,
-    video {
+    img, video {
       width: 100%;
       height: 100%;
       display: block;
@@ -180,11 +151,7 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
       border-radius: 15px;
     }
 
-    &:hover {
-      transform: scale(1.07);
-      box-shadow: $shadow-hover;
-      z-index: 5;
-    }
+    &:hover { transform: scale(1.07); box-shadow: $shadow-hover; z-index: 5; }
   }
 
   .carousel-arrow {
@@ -196,26 +163,20 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
     user-select: none;
     transition: color 0.3s ease;
 
-    &:hover {
-      color: $color-accent;
-    }
+    &:hover { color: $color-accent; }
+    &.left-arrow { margin-right: 15px; }
+    &.right-arrow { margin-left: 15px; }
 
-    &.left-arrow {
-      margin-right: 15px;
-    }
-
-    &.right-arrow {
-      margin-left: 15px;
-    }
+    @media screen and (max-width: 900px) { font-size: 2.5rem; padding: 0 10px; }
+    @media screen and (max-width: 480px) { font-size: 2rem; }
   }
 }
 
-// Modal styles for enlarged media
+// Modal for enlarged media
 .image-modal {
   position: fixed;
   margin-top: 85px;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
@@ -224,27 +185,22 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
   animation: fadeInModal 0.3s ease forwards;
   cursor: default;
-  transition: opacity 0.3s ease;
   padding: 20px;
   justify-content: center;
 
-  &.closing {
-    opacity: 0;
-  }
+  &.closing { opacity: 0; }
 
   .image-modal-content {
     max-width: 90vw;
     max-height: 90vh;
     padding: 10px;
-    box-sizing: border-box;
-    animation: zoomIn 0.3s ease forwards;
-    pointer-events: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    pointer-events: none;
+    animation: zoomIn 0.3s ease forwards;
 
-    img,
-    video {
+    img, video {
       max-width: 100%;
       max-height: 100%;
       border-radius: 15px;
@@ -252,76 +208,112 @@ $shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.3);
       pointer-events: auto;
       transition: transform 0.3s ease;
 
-      &:hover {
-        transform: scale(1.02);
-      }
+      &:hover { transform: scale(1.02); }
     }
   }
 }
 
-// Animations
-@keyframes fadeIN {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+// Mobile Styles
+@media screen and (max-width: 768px) {
+  .image-modal { display: none !important; }
 
-@keyframes fadeInModal {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes zoomIn {
-  from {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@media screen and (max-width: 900px) {
   .projects-page {
-    padding: 60px 5% 40px 5%;
+    padding: 40px 5% 20px 5%;
 
     .fixed-title {
-      left: 5%;
-      font-size: 48px;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      left: auto;
+      top: auto;
     }
 
+    .carousel-arrow { display: none; }
+
     .text-zone {
-      gap: 3rem;
+      gap: 2rem;
+      padding: 0;
+      height: auto !important;
+      display: flex;
+      flex-direction: column;
+      overflow: visible !important;
     }
 
     .project {
       flex-direction: column;
-      padding: 1.5rem 1rem;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      border-radius: 15px;
+      text-align: center;
 
-      .project-description,
-      .project-media {
+      .project-description {
         flex: 1 1 100%;
         min-width: auto;
+
+        h2 { font-size: 1.8rem; }
+        p, .technologies { font-size: 1.2rem; }
+        .external-link { font-size: 1.4rem; padding: 8px 16px; border-width: 2px; }
       }
 
-      .project-media {
-        margin-top: 1rem;
+      .project-media { flex: 1 1 100%; }
+    }
+
+    .scrolling-carousel {
+      overflow-x: auto;   
+      overflow-y: hidden;  
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin; 
+      scrollbar-color: rgba(246, 237, 219, 0.7) transparent;
+
+      &::-webkit-scrollbar {
+        height: 10px;       
+        display: block;       
       }
     }
 
-    .carousel-arrow {
-      font-size: 2.5rem;
-      padding: 0 10px;
+    .carousel-image {
+      max-width: 355px;
+      flex: 0 0 auto;
+      cursor: default;
+      transition: none;
+      z-index: auto;
+      box-shadow: none;
+
+      img, video {
+        border-radius: 10px;
+        object-fit: cover;
+        pointer-events: none; 
+      }
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .projects-page {
+    padding: 30px 3% 20px 3%;
+
+    .fixed-title { font-size: 24px; margin-bottom: 1.5rem; }
+
+    .project {
+      padding: 1rem;
+      gap: 1rem;
+      border-radius: 15px;
+
+      .project-description {
+        h2 { font-size: 1.6rem; }
+        p, .technologies { font-size: 1rem; }
+        .external-link { font-size: 1.2rem; padding: 6px 12px; }
+      }
+
+      .project-media { padding: 0.25rem; }
+    }
+
+    .scrolling-carousel { gap: 0.5rem; padding: 0.25rem; }
+  }
+}
+
+// Animations
+@keyframes fadeIN { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInModal { from { opacity: 0; } to { opacity: 1; } }
+@keyframes zoomIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
