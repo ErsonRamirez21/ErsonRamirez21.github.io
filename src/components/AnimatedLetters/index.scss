@@ -1,24 +1,42 @@
 .text-animate {
   display: inline-block;
-  opacity: 0;
-  animation: bounceIn 0.6s 0s;
-  animation-fill-mode: forwards;
-  min-width: 10px;
+  opacity: 1;              
+  transform: translateY(20px);
+  animation: bounceIn 0.6s forwards;
+  cursor: default;           
+  pointer-events: auto;      
+  min-width: 12px;
 }
 
 .text-animate-hover {
   min-width: 10px;
   display: inline-block;
-  animation-fill-mode: both;
+  cursor: default;           
+  pointer-events: auto;
 
   &:hover {
-    animation: rubberBand 0.6s;
-    color: #7a192b;
+    animation: rubberBand 0.5s; 
+    color: #1b1e23;
   }
 }
 
 @for $i from 1 through 35 {
   .text-animate._#{$i} {
-    animation-delay: #{($i * 0.06)}s;
+    animation-delay: #{($i - 1) * 0.05}s; 
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: translateY(20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

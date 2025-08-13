@@ -6,6 +6,10 @@ function importAll(r) {
   return r.keys().map(r);
 }
 
+const indieGameImages = importAll(
+  require.context('../../assets/images/indieGame', false, /\.(png|jpe?g|svg|gif|mp4|webm)$/)
+);
+
 const seedPlanterImages = importAll(
   require.context('../../assets/images/seedplantermobile', false, /\.(png|jpe?g|svg)$/)
 );
@@ -26,31 +30,14 @@ const Projects = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
   const [selectedImage, setSelectedImage] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
+  const carouselRefs = useRef([]);
 
-  const carouselsRef = useRef([]);
-  const scrollXRef = useRef(0);
-
-  // Animate carousel scroll
   useEffect(() => {
-    let animationId;
-    const scrollSpeed = 0.5;
-
-    const animate = () => {
-      if (!selectedImage) {
-        scrollXRef.current += scrollSpeed;
-        carouselsRef.current.forEach((carousel) => {
-          if (carousel) {
-            carousel.scrollLeft = scrollXRef.current;
-          }
-        });
-      }
-      animationId = requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    return () => cancelAnimationFrame(animationId);
-  }, [selectedImage]); // Pause when modal is open
+    const timer = setTimeout(() => {
+      setLetterClass('text-animate-hover');
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleImageClick = (imageUrl) => {
     setSelectedImage(imageUrl);
@@ -62,14 +49,25 @@ const Projects = () => {
     setTimeout(() => setSelectedImage(null), 300);
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLetterClass('text-animate-hover');
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
+  const scrollCarousel = (index, direction) => {
+    const carousel = carouselRefs.current[index];
+    if (!carousel) return;
+    const scrollAmount = carousel.offsetWidth * 0.7; 
+
+    if (direction === 'left') {
+      carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+      carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   const projects = [
+    {
+      name: 'Deepwater Bravo',
+      description:
+        '2D hack and slash game made with GML. Inspired by classic titles like Hades and Enter the Gungeon!',
+      images: indieGameImages,
+    },
     {
       name: 'Seed Planter Mobile',
       description:
@@ -77,7 +75,7 @@ const Projects = () => {
       images: seedPlanterImages,
     },
     {
-      name: 'Mathmunition: Equation Seige',
+      name: 'Mathmunition: Equation Siege',
       description:
         'Unity-based educational game teaching linear equations through arcade-style cannon mechanics.',
       gameEmbedUrl: 'https://jojojo8359.github.io/SWE-Project/assets/game_webgl/index.html',
@@ -99,7 +97,7 @@ const Projects = () => {
     },
   ];
 
-    return (
+  return (
     <div className="container projects-page">
       <h1 className="fixed-title">
         <AnimatedLetters
@@ -110,13 +108,18 @@ const Projects = () => {
       </h1>
 
       <div className="text-zone">
-        <div className="projects-container">
-          {projects.map((project, index) => (
-            <div className="project" key={index}>
+        {projects.map((project, index) => (
+          <div className="project" key={index}>
+            <div className="project-description">
               <h2>{project.name}</h2>
               <p>{project.description}</p>
 
-              
+              {project.technologies && (
+                <p className="technologies">
+                  <strong>Technologies:</strong> {project.technologies.join(', ')}
+                </p>
+              )}
+
               {project.projectUrl && (
                 <a
                   className="external-link"
@@ -127,22 +130,25 @@ const Projects = () => {
                   🔗 Visit Project Site
                 </a>
               )}
+            </div>
 
-              {project.gameEmbedUrl && (
+            <div className="project-media">
+              {project.gameEmbedUrl ? (
                 <div className="game-embed">
                   <iframe
                     src={project.gameEmbedUrl}
                     title={`${project.name} Game`}
                     width="100%"
-                    height="600"
+                    height="400"
                     scrolling="no"
                     allowFullScreen
-                  ></iframe>
+                  />
                 </div>
-              )}
-
-              {project.images?.length === 1 ? (
-                <div className="static-image" onClick={() => handleImageClick(project.images[0].default || project.images[0])}>
+              ) : project.images?.length === 1 ? (
+                <div
+                  className="static-image"
+                  onClick={() => handleImageClick(project.images[0].default || project.images[0])}
+                >
                   <img
                     src={project.images[0].default || project.images[0]}
                     alt={`${project.name} screenshot`}
@@ -150,41 +156,72 @@ const Projects = () => {
                 </div>
               ) : project.images?.length > 1 ? (
                 <div className="carousel-wrapper">
+                  <button
+                    className="carousel-arrow left-arrow"
+                    onClick={() => scrollCarousel(index, 'left')}
+                    aria-label="Scroll Left"
+                  >
+                    ‹
+                  </button>
+
                   <div
                     className="scrolling-carousel"
-                    ref={(el) => (carouselsRef.current[index] = el)}
+                    ref={(el) => (carouselRefs.current[index] = el)}
                   >
-                    {[...project.images, ...project.images].map((image, idx) => (
-                      <div
-                        key={idx}
-                        className="carousel-image"
-                        onClick={() => handleImageClick(image.default || image)}
-                      >
-                        <img
-                          src={image.default || image}
-                          alt={`${project.name} screenshot ${idx + 1}`}
-                        />
-                      </div>
-                    ))}
+                    {project.images.map((media, idx) => {
+                      const src = media.default || media;
+                      const isVideo = /\.(mp4|webm)$/i.test(src);
+
+                      return (
+                        <div
+                          key={idx}
+                          className="carousel-image"
+                          onClick={() => handleImageClick(src)}
+                        >
+                          {isVideo ? (
+                            <video
+                              src={src}
+                              muted
+                              autoPlay
+                              loop
+                              preload="metadata"
+                              style={{ maxWidth: '100%', maxHeight: '100%' }}
+                            />
+                          ) : (
+                            <img src={src} alt={`${project.name} screenshot ${idx + 1}`} />
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
+
+                  <button
+                    className="carousel-arrow right-arrow"
+                    onClick={() => scrollCarousel(index, 'right')}
+                    aria-label="Scroll Right"
+                  >
+                    ›
+                  </button>
                 </div>
               ) : null}
-
-
-
-
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
       {selectedImage && (
         <div
           className={`image-modal ${isClosing ? 'closing' : ''}`}
           onClick={closeModal}
+          role="dialog"
+          aria-modal="true"
         >
-          <div className="image-modal-content">
-            <img src={selectedImage} alt="Enlarged" />
+          <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
+            {/\.(mp4|webm)$/i.test(selectedImage) ? (
+              <video src={selectedImage} controls autoPlay muted />
+            ) : (
+              <img src={selectedImage} alt="Enlarged" />
+            )}
           </div>
         </div>
       )}

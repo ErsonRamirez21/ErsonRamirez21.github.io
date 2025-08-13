@@ -1,10 +1,8 @@
-$primary-color: #ffd700; 
 @import 'animate.css';
 
-//Test
 @font-face {
     font-family: 'Leauge Spartan'; 
-    src: url('./assets/fonts/league-spartan.ttf') format('truetype'); // Corrected extension and format
+    src: url('./assets/fonts/league-spartan.ttf') format('truetype'); 
 }
 
 @font-face {
@@ -21,3 +19,4 @@ input,
 textarea {
     font-family: 'Leauge Spartan';
 }
+

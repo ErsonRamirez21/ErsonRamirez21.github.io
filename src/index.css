@@ -8,9 +8,38 @@ body {
   margin: 0;
   font: 300 11px/1.4 'Leauge Spartan', 'sans-serif';
   color: #444;
-  background: #EBE9E1;
+  background: #1b1e23;
   overflow: hidden;
   display: block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;   
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+
+  background: 
+    radial-gradient(circle at 80% 20%, #ec8d75 0%, transparent 35%),
+    radial-gradient(circle at 50% 50%, #bd4b64 0%, transparent 30%),
+    radial-gradient(circle at 70% 80%, #9e2281 0%, transparent 40%),
+    radial-gradient(circle at 30% 70%, #40265c 0%, transparent 35%),
+    radial-gradient(circle at 60% 10%, #244584 0%, transparent 30%),
+    radial-gradient(circle at 10% 50%, #50a9cf 0%, transparent 40%),
+    radial-gradient(circle at 90% 60%, #96e6c2 0%, transparent 35%);
+    
+  background-repeat: no-repeat;
+  background-size: 400% 400%; 
+  animation: driftBackground 60s linear infinite;
+}
+
+@keyframes driftBackground {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
 }

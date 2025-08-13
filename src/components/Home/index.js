@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
-import LogoTitle from '../../assets/images/logo-s.png'
 import Logo from './Logo'
 import './index.scss'
 
@@ -33,13 +31,13 @@ const Home = () => {
                     <AnimatedLetters
                         letterClass={letterClass}
                         strArray={nameArray}
-                        idx={15} // Start index for nameArray
+                        idx={15} 
                     />
                     <br />
                     <AnimatedLetters
                         letterClass={letterClass}
                         strArray={jobArray}
-                        idx={nameArray.length + 15} // Ensure jobArray starts after nameArray
+                        idx={nameArray.length + 15} 
                     />
                 </h1>
                 <h2>Frontend Developer</h2>

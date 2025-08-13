@@ -5,12 +5,13 @@ import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
-    const form = useRef();
+    const formRef = useRef();
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setLetterClass('text-animate-hover');
         }, 3000);
+
         return () => clearTimeout(timer);
     }, []);
 
@@ -21,21 +22,17 @@ const Contact = () => {
             .sendForm(
                 process.env.REACT_APP_EMAILJS_SERVICE_ID,
                 process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-                form.current,
-                {
-                    publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
-                }
+                formRef.current,
+                { publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY }
             )
-            .then(
-                () => {
-                    alert('Message sent successfully!');
-                    form.current.reset();
-                },
-                (error) => {
-                    alert('Failed to send the message, please try again');
-                    console.error('EmailJS error:', error);
-                }
-            );
+            .then(() => {
+                alert('Message sent successfully!');
+                formRef.current.reset();
+            })
+            .catch((error) => {
+                alert('Failed to send the message, please try again.');
+                console.error('EmailJS error:', error);
+            });
     };
 
     return (
@@ -48,12 +45,15 @@ const Contact = () => {
                         idx={15}
                     />
                 </h1>
+
                 <p>
-                    I am interested in freelance opportunities or full-time positions. Whether you have a project in mind
-                    or just want to say hello, my inbox is always open. Feel free to reach out, and I will get back to you as soon as possible!
+                    I'm always interested in freelance opportunities or full-time positions. 
+                    Whether you have a project in mind or just want to say hello, my inbox is always open. 
+                    Feel free to reach out, and I will get back to you as soon as possible!
                 </p>
+
                 <div className="contact-form">
-                    <form ref={form} onSubmit={sendEmail}>
+                    <form ref={formRef} onSubmit={sendEmail}>
                         <ul>
                             <li className="half">
                                 <input type="text" name="user_name" placeholder="Name" required />
@@ -79,5 +79,4 @@ const Contact = () => {
 };
 
 export default Contact;
-
 

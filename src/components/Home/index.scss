@@ -1,80 +1,57 @@
 @keyframes fadeIN {
-    from {
-        opacity: 0;
-        transform: translateY(10px); /* Optional */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .home-page {
-    .text-zone {
-        position: absolute;
-        left: 10%;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40%;
-        max-height: 90%;
+  .text-zone {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+    max-height: 90%;
+  }
+
+  h1 {
+    color: #f6eddb;
+    font-size: 60px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  h2 {
+    color: #f6eddb;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-top: 20px;
+    animation: fadeIN 1s 1.8s backwards;
+  }
+
+  .flat-button {
+    display: inline-block;
+    padding: 10px 18px;
+    margin-top: 25px;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #f6eddb;
+    border: 1px solid #f6eddb;
+    text-decoration: none;
+    white-space: nowrap;
+    animation: fadeIN 1s 1.8s backwards;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #1b1e23;
+      color: #fff;
     }
-
-    h1 {
-        color: #E43D12;
-        font-size: 60px;
-        margin: 0;
-        font-weight: 400;
-
-        &::before {
-            opacity: 0.6;
-            content: '<h1>';
-            //font-family: 'La Belle Aurore';
-            font-size: 30px;
-            position: absolute;
-            margin-top: -40px;
-            left: 15px;
-            animation: fadeIN 1s 1.7s backwards;
-        }
-
-        &::after {
-            opacity: 0.6;
-            content: '</h1>';
-            //font-family: 'La Belle Aurore';
-            font-size: 30px;
-            position: absolute;
-            margin-top: 18px;
-            margin-left: 20px;
-            animation: fadeIN 1s 1.7s backwards;
-        }
-    }
-
-    h2 {
-        color: #E43D12;
-        margin-top: 20px;
-        font-weight: 400;
-        font-size: 20px;
-        letter-spacing: 3px;
-        animation: fadeIN 1s 1.8s backwards;
-    }
-
-    .flat-button {
-        color: #E43D12;
-        font-size: 13px;
-        font-weight: 400;
-        letter-spacing: 4px;
-        text-decoration: none;
-        padding: 10px 18px;
-        border: 1px solid #E43D12;
-        margin-top: 25px;
-        float: left;
-        animation: fadeIN 1s 1.8s backwards;
-        white-space: nowrap;
-
-        &:hover {
-            background-color: #E43D12;
-            color: #fff;
-            border: 1px solid #E43D12;
-            transition: all 0.3s ease;
-        }
-    }
+  }
 }

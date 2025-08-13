@@ -8,7 +8,7 @@
   bottom: 0;
   left: auto;
   margin: auto;
-  opacity: 0; /* Let GSAP handle this */
+  opacity: 0;
 
   svg {
       width: 100%;
@@ -24,13 +24,13 @@
       left: 0;
       margin: auto;
       width: 100%;
-      opacity: 0; /* Let GSAP handle this */
+      opacity: 0; 
       z-index: 1;
   }
 }
 
 .svg-container {
-  stroke: #E43D12;
+  stroke: #f6eddb;
   stroke-width: 10;
-  fill: none; /* Ensure no fill obstructs the stroke */
+  fill: none; 
 }
