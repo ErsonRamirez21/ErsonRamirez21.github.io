@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b608bc64.css",
+    "main.js": "/static/js/main.269e1458.js",
+    "static/js/453.b3faef14.chunk.js": "/static/js/453.b3faef14.chunk.js",
+    "static/media/2025-08-12 18-59-56(1).webm": "/static/media/2025-08-12 18-59-56(1).2d7fcab979b760f2ad9d.webm",
+    "static/media/339953149-58a6ee53-1e76-4c7d-9a23-18ef6e20a88a.png": "/static/media/339953149-58a6ee53-1e76-4c7d-9a23-18ef6e20a88a.ba37620ba5e1b122ca97.png",
+    "static/media/339953143-6f95472e-46bc-4001-836f-0a95151e3889.png": "/static/media/339953143-6f95472e-46bc-4001-836f-0a95151e3889.28fb70c45a90131c0179.png",
+    "static/media/339953144-a72cfeab-bb9f-4f67-9474-be4b04339da3.png": "/static/media/339953144-a72cfeab-bb9f-4f67-9474-be4b04339da3.c107dcee9b3fe1b0739e.png",
+    "static/media/339953148-3873f216-2e05-446d-ae3d-65d6437d1515.png": "/static/media/339953148-3873f216-2e05-446d-ae3d-65d6437d1515.882281dddbe1c07f9cc2.png",
+    "static/media/screenshot.png": "/static/media/screenshot.84711730b16d83c5bb46.png",
+    "static/media/339953158-0e077756-8cd3-45d4-8ed3-357d1e5f05be.png": "/static/media/339953158-0e077756-8cd3-45d4-8ed3-357d1e5f05be.b0f9b183488098110f3e.png",
+    "static/media/339953168-190bca39-e3d7-4839-8aaf-5c491e69cba7.png": "/static/media/339953168-190bca39-e3d7-4839-8aaf-5c491e69cba7.f23708be04f95f82f4f6.png",
+    "static/media/Screenshot_16-7-2025_195129_.jpeg": "/static/media/Screenshot_16-7-2025_195129_.8a2b64a5d6572f239b71.jpeg",
+    "static/media/339953155-a704905e-17c4-49c1-8aaf-a751a700eaf6.png": "/static/media/339953155-a704905e-17c4-49c1-8aaf-a751a700eaf6.ae0de6959b6f5376a668.png",
+    "static/media/Screenshot_16-7-2025_195217_.jpeg": "/static/media/Screenshot_16-7-2025_195217_.a66ac7958730388bb309.jpeg",
+    "static/media/Screenshot_16-7-2025_195143_.jpeg": "/static/media/Screenshot_16-7-2025_195143_.74e02d609ca1de2441b8.jpeg",
+    "static/media/339953162-1cff81f9-424c-46d4-ac9e-2e044d4821b0.png": "/static/media/339953162-1cff81f9-424c-46d4-ac9e-2e044d4821b0.62fb821119cf6ec8d93f.png",
+    "static/media/KeyArtGame.png": "/static/media/KeyArtGame.463f1562e08dee0c80c9.png",
+    "static/media/Screenshot_16-7-2025_195154_.jpeg": "/static/media/Screenshot_16-7-2025_195154_.59c7e4740aa8aa906158.jpeg",
+    "static/media/Screenshot_16-7-2025_19527_.jpeg": "/static/media/Screenshot_16-7-2025_19527_.967ed68c1503eb2d246f.jpeg",
+    "static/media/EnemySprite1.gif": "/static/media/EnemySprite1.e1077bd96535d3922ff0.gif",
+    "static/media/FlintFrogSprite.gif": "/static/media/FlintFrogSprite.f9fd8025b1b081c8a40f.gif",
+    "static/media/league-spartan.ttf": "/static/media/league-spartan.4078dc7ed7d926d9f0bd.ttf",
+    "static/media/frogRun.gif": "/static/media/frogRun.0de6bdacd37e14b7c8f0.gif",
+    "static/media/LaBelleAurore.woff2": "/static/media/LaBelleAurore.a83c1c58fd7e43972e4a.woff2",
+    "static/media/logo-er-export.png": "/static/media/logo-er-export.1e62e79a25d39752e165.png",
+    "static/media/CoolveticaRg-Regular.woff2": "/static/media/CoolveticaRg-Regular.7d1f3b1dd46ad6557a17.woff2",
+    "index.html": "/index.html",
+    "main.b608bc64.css.map": "/static/css/main.b608bc64.css.map",
+    "main.269e1458.js.map": "/static/js/main.269e1458.js.map",
+    "453.b3faef14.chunk.js.map": "/static/js/453.b3faef14.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b608bc64.css",
+    "static/js/main.269e1458.js"
+  ]
+}
